@@ -18,6 +18,7 @@ export default function OurProdcuts({ categories }) {
   return (
     <div className={styles.container}>
       <p className={styles.container}>Our Products</p>
+      {/* <Fade bottom> */}
       <div className={styles.wrapper}>
         {categories.map((name, index) => (
           <Link
@@ -34,6 +35,7 @@ export default function OurProdcuts({ categories }) {
           </Link>
         ))}
       </div>
+      {/* </Fade> */}
     </div>
   );
 }

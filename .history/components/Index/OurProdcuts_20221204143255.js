@@ -18,22 +18,24 @@ export default function OurProdcuts({ categories }) {
   return (
     <div className={styles.container}>
       <p className={styles.container}>Our Products</p>
-      <div className={styles.wrapper}>
-        {categories.map((name, index) => (
-          <Link
-            href={`/products?category=${name}`}
-            key={index}
-            className={styles.categories}
-          >
-            <div className={styles.iconContainer}>
-              <BsEmojiHeartEyes className={styles.linkIcon} />
-            </div>
-            <p className="text-md group-hover:text-slate-50 text-center capitalize whitespace-nowrap">
-              {name}
-            </p>
-          </Link>
-        ))}
-      </div>
+      <Fade direction="down">
+        <div className={styles.wrapper}>
+          {categories.map((name, index) => (
+            <Link
+              href={`/products?category=${name}`}
+              key={index}
+              className={styles.categories}
+            >
+              <div className={styles.iconContainer}>
+                <BsEmojiHeartEyes className={styles.linkIcon} />
+              </div>
+              <p className="text-md group-hover:text-slate-50 text-center capitalize whitespace-nowrap">
+                {name}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </Fade>
     </div>
   );
 }

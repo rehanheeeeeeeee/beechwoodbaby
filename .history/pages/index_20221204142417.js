@@ -39,13 +39,22 @@ export default function Home({ latestProducts, categories }) {
   return (
     <div className={styles.container}>
       <Hero />
+      {/* <Fade bottom> */}
       <div className=" bg-[rgba(0,0,0,0.2)] w-[80vw] h-[1px]"></div>
+      {/* </Fade> */}
       <About />
+      {/* <Fade bottom> */}
       <div className=" bg-[rgba(0,0,0,0.2)] w-[80vw] h-[1px]"></div>
+      {/* </Fade> */}
       <LatestProducts latestProducts={latestProducts} />
+      {/* <Fade bottom> */}
       <div className=" bg-[rgba(0,0,0,0.2)] w-[80vw] h-[1px]"></div>
+      {/* </Fade> */}
       <OurProdcuts categories={categories} />
+
+      {/* <Fade bottom> */}
       <div className=" bg-[rgba(0,0,0,0.2)] w-[80vw] h-[1px]"></div>
+      {/* </Fade> */}
       <Contact />
     </div>
   );

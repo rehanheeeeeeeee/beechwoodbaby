@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { AttentionSeeker } from "react-awesome-reveal";
+import Pulse from "react-awesome-reveal";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -78,6 +78,7 @@ export default function Contact() {
         <form ref={formRef} onSubmit={submitForm}>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
+              {/* <Pulse> */}
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label
@@ -95,6 +96,8 @@ export default function Contact() {
                   />
                 </div>
               </div>
+              {/* </Pulse> */}
+              {/* <Pulse> */}{" "}
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label
@@ -112,6 +115,8 @@ export default function Contact() {
                   />
                 </div>
               </div>
+              {/* </Pulse> */}
+              {/* <Pulse> */}{" "}
               <div className="p-2 w-full">
                 <div className="relative">
                   <label
@@ -129,6 +134,7 @@ export default function Contact() {
                   ></textarea>
                 </div>
               </div>
+              {/* </Pulse> */}
               <div className="p-2 w-full">
                 <button
                   type="submit"

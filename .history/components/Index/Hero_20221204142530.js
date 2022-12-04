@@ -11,6 +11,7 @@ export default function Hero() {
   return (
     <section className="body-font">
       <div className="container mx-auto flex px-7 py-24 md:px-14 md:flex-row flex-col items-center relative">
+        {/* <Fade left> */}
         <div className={styles.delivery}>
           <p className="text-headingColor font-semibold text-md">
             Worldwide Delivery
@@ -36,6 +37,8 @@ export default function Hero() {
             hexagon try-hard chambray.
           </p>
         </div>
+        {/* </Fade> */}
+        {/* <Fade right> */}
         <div className="lg:max-w-lg lg:w-full md:w-[60%] w-5/6">
           <Image
             width={1920}
@@ -45,6 +48,7 @@ export default function Hero() {
             src={"/heroImage2.png"}
           />
         </div>
+        {/* </Fade> */}
       </div>
     </section>
   );

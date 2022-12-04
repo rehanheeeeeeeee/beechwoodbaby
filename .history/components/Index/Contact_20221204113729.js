@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { AttentionSeeker } from "react-awesome-reveal";
+import Pulse from "react-awesome-reveal";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -78,57 +78,65 @@ export default function Contact() {
         <form ref={formRef} onSubmit={submitForm}>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    for="name"
-                    className="leading-7 text-sm text-textColor"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="from_name"
-                    className={styles.input}
-                    required
-                  />
+              <Pulse>
+                <div className="p-2 w-1/2">
+                  <div className="relative">
+                    <label
+                      for="name"
+                      className="leading-7 text-sm text-textColor"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="from_name"
+                      className={styles.input}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    for="email"
-                    className="leading-7 text-sm text-textColor"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="user_email"
-                    className={styles.input}
-                    required
-                  />
+              </Pulse>
+              <Pulse>
+                {" "}
+                <div className="p-2 w-1/2">
+                  <div className="relative">
+                    <label
+                      for="email"
+                      className="leading-7 text-sm text-textColor"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="user_email"
+                      className={styles.input}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="p-2 w-full">
-                <div className="relative">
-                  <label
-                    for="message"
-                    className="leading-7 text-sm text-textColor"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className={styles.input}
-                    required
-                  ></textarea>
+              </Pulse>
+              <Pulse>
+                {" "}
+                <div className="p-2 w-full">
+                  <div className="relative">
+                    <label
+                      for="message"
+                      className="leading-7 text-sm text-textColor"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className={styles.input}
+                      required
+                    ></textarea>
+                  </div>
                 </div>
-              </div>
+              </Pulse>
               <div className="p-2 w-full">
                 <button
                   type="submit"

@@ -78,23 +78,25 @@ export default function Contact() {
         <form ref={formRef} onSubmit={submitForm}>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    for="name"
-                    className="leading-7 text-sm text-textColor"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="from_name"
-                    className={styles.input}
-                    required
-                  />
+              <AttentionSeeker effect="pulse">
+                <div className="p-2 w-1/2">
+                  <div className="relative">
+                    <label
+                      for="name"
+                      className="leading-7 text-sm text-textColor"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="from_name"
+                      className={styles.input}
+                      required
+                    />
+                  </div>
                 </div>
-              </div>
+              </AttentionSeeker>
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label

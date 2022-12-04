@@ -11,6 +11,7 @@ import {
   removeFromWislist,
   selectWishlistItems,
 } from "../../redux/wishlistSlice";
+import { Fade } from "react-reveal";
 
 export const getServerSideProps = async (context) => {
   const id = context.query.id;
