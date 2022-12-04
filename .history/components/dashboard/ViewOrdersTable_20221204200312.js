@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Image from "next/image";
+import UpdateStatus from "./UpdateStatus";
 const styles = {
   heading:
     "text-4xl md:text-[4vw] font-extrabold tracking-wide text-center w-full mt-12 mb-5",

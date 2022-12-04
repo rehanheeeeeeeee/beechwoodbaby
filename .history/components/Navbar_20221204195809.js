@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { IoMdBasket } from "react-icons/io";
 import Sidebar from "./Sidebar";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowSidebar } from "../redux/sidebarSlice";
+import { selectShowSidebar, setShowSidebar } from "../redux/sidebarSlice";
 import { removeUser, selectUser } from "../redux/userSlice";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
@@ -60,6 +60,7 @@ const DropdownOption = ({ title, link }) => (
 
 export default function Navbar() {
   const [showOptions, setShowOptions] = useState(false);
+  const showSidebar = useSelector(selectShowSidebar);
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const [categories, setCategories] = useState();
@@ -166,6 +167,17 @@ export default function Navbar() {
       </div>
       <div className="flex items-center w-full justify-center gap-6 mt-1 md:hidden ">
         <Dropdown categories={categories} style />
+
+        {/* {links.map(({ link, icon }, index) => (
+          <Link
+            key={index}
+            className="flex flex-col-reverse justify-center items-center space-y-1 group"
+            href={`/${link}`}
+          >
+            <p className="capitalize text-sm">{link}</p>
+            {icon}
+          </Link>
+        ))} */}
       </div>
       {user && showOptions && (
         <motion.div

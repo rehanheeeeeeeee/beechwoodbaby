@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { IoMdBasket } from "react-icons/io";
 import Sidebar from "./Sidebar";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowSidebar } from "../redux/sidebarSlice";
+import { selectShowSidebar, setShowSidebar } from "../redux/sidebarSlice";
 import { removeUser, selectUser } from "../redux/userSlice";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
@@ -60,6 +60,7 @@ const DropdownOption = ({ title, link }) => (
 
 export default function Navbar() {
   const [showOptions, setShowOptions] = useState(false);
+  const showSidebar = useSelector(selectShowSidebar);
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const [categories, setCategories] = useState();

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectBasket, selectBasketTotal } from "../redux/cartSlice";
 import BillnigDetailsForm from "../components/Checkout/BillnigDetailsForm";
+import { selectUser } from "../redux/userSlice";
 import { useRouter } from "next/router";
 import MyModal from "../components/Checkout/Modal";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PaypalBtn from "../components/Checkout/PaypalBtn";
 import CheckoutCard from "../components/Checkout/CheckoutCard";
 
 const styles = {
@@ -20,6 +22,8 @@ const styles = {
 export default function Checkout() {
   const basketTotal = useSelector(selectBasketTotal);
   const basket = useSelector(selectBasket);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +34,9 @@ export default function Checkout() {
   const [address1, setAddress1] = useState("");
   const [address2, setAddress2] = useState("");
   const [district, setDistrict] = useState("");
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   let [isOpen, setIsOpen] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [disabled, setDisabled] = useState(false);

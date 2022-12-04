@@ -1,6 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearBasket, selectBasketTotal } from "../../redux/cartSlice";
+import {
+  clearBasket,
+  selectBasket,
+  selectBasketTotal,
+} from "../../redux/cartSlice";
 
 export default function PaypalBtn({ createNewOrder }) {
   const refPaypalBtn = useRef();
