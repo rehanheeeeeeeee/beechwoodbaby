@@ -1,0 +1,19 @@
+import Image from "next/image";
+import React from "react";
+
+export default function ErrorPage() {
+  return (
+    <div className="flex flex-col py-16 w-full items-center">
+      <Image
+        alt=""
+        width={1920}
+        height={1080}
+        src={"/logo.png"}
+        className="max-h-[400px] max-w-[400px]"
+      />
+      <p className="font-semibold text=xl">
+        Error 404 This Page Does not Exist
+      </p>
+    </div>
+  );
+}

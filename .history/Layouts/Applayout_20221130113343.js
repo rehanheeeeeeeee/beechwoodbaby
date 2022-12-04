@@ -1,0 +1,23 @@
+import Script from "next/script";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Navbar from "../components/Navbar";
+import { setBasket } from "../redux/cartSlice";
+import { setUser } from "../redux/userSlice";
+
+export default function Applayout({ children }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setBasket(JSON.parse(localStorage.getItem("basket"))));
+    dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
+  }, []);
+  return (
+    <div className="bg-primary">
+      <Script
+        src={`https://www.paypal.com/sdk/js?client-id=${process.env.NEXT_PUBLIC_CLIENT_ID}`}
+      ></Script>
+      <Navbar />
+      {children}
+    </div>
+  );
+}

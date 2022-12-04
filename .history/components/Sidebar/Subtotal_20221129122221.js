@@ -1,0 +1,26 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import { selectBasketTotal } from "../../redux/cartSlice";
+
+const styles = {
+  amount: "flex items-center justify-between flex-1 p-6 text-gray-400 text-xl",
+};
+
+const Amount = ({ title, amount }) => (
+  <div className={styles.amount}>
+    <p>{title}</p>
+    <p>{amount} BHD</p>
+  </div>
+);
+
+export default function Subtotal() {
+  const basketTotal = useSelector(selectBasketTotal);
+  return (
+    <div className="bg-cartTotal rounded-t-[28px]">
+      <div className={styles.amount}>
+        <p>Subtotal</p>
+        <p>{basketTotal} BHD</p>
+      </div>
+    </div>
+  );
+}
