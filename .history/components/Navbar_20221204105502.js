@@ -132,9 +132,7 @@ export default function Navbar() {
                 link={option.link}
               />
             ))}
-            {user.email === "rehantosif80@gmail.com" && (
-              <DropdownOption title="Dashboard" link="/dashboard" />
-            )}
+            <DropdownOption title="Dashboard" link="/dashboard" />
             <div
               onClick={() => dispatch(removeUser())}
               className={styles.logout}
@@ -203,9 +201,7 @@ export default function Navbar() {
               link={option.link}
             />
           ))}
-          {user.email === "rehantosif80@gmail.com" && (
-            <DropdownOption title="Dashboard" link="/dashboard" />
-          )}
+          <DropdownOption title="Dashboard" link="/dashboard" />
           <div onClick={() => dispatch(removeUser())} className={styles.logout}>
             <p>Log Out</p>
             <TbLogout className={styles.logoutIcon} />
